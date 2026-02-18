@@ -1,0 +1,185 @@
+/* --- RESET & FONT --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- KONTAINER UMUM --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    padding: 1.5rem 0;
+    background: transparent;
+    text-decoration: none;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    /* Ini triknya: Logo di kiri, sisa ruang dipakai buat nengahin menu */
+    position: relative; 
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: #5F8D8B;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Pastikan logo stay di kiri */
+    margin-right: auto; 
+    z-index: 10;
+    text-decoration: none;
+}
+
+.nav-links {
+    /* Membuat menu benar-benar di tengah absolut */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    display: flex;
+    gap: 3rem; /* Jarak antar teks menu (Bank Soal - Latihan - Materi) */
+    text-decoration: none;
+}
+
+.nav-links a {
+    font-weight: 700;
+    color: #9ca3af; /* Abu-abu soft */
+    font-size: 1rem;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #5F8D8B;
+}
+
+/* --- HEADER SECTION (JUDUL & BACK) --- */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0;
+    flex-wrap: wrap; /* Biar aman di HP */
+}
+
+.page-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #5F8D8B;
+    line-height: 1.2;
+    max-width: 600px;
+}
+
+/* Tombol Back */
+.btn-back {
+    display: inline-block;
+    background-color: #f87171; /* Merah soft */
+    color: white;
+    font-weight: 700;
+    padding: 10px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-back:hover {
+    background-color: #ef4444;
+    transform: scale(1.05);
+}
+
+/* --- GRID TOMBOL PAKET --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default 3 kolom (Laptop) */
+    gap: 24px;
+    margin-bottom: 80px;
+}
+
+/* Responsif: Tablet jadi 2 kolom */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsif: HP jadi 1 kolom */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .header-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .page-title {
+        font-size: 32px;
+    }
+}
+
+/* Styling Tombol Paket */
+.card-btn {
+    background-color: #4FD1C5; /* Warna Teal sesuai gambar */
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 40px 20px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 100%; /* Full width sel */
+}
+
+/* Efek Hover (Mouse di atas tombol) */
+.card-btn:hover {
+    background-color: #3ebcb1;
+    transform: translateY(-8px); /* Naik ke atas */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2); /* Bayangan menebal */
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #5F8D8B;
+    color: white;
+    padding: 40px 0;
+    margin-top: auto; /* Dorong footer ke paling bawah */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
